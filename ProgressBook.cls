@@ -601,7 +601,7 @@ Birchon Document Class]
 \setmainfont[ItalicFont=BELLI.TTF]{BELL.TTF}
 
 %\setmonofont{EB Garamond}
-\setsansfont{Ezra SIL SR}
+%\setsansfont{Ezra SIL SR}
 % Use the following if you only want to change the font for Hebrew
 \newfontfamily\hebrewfont[Script=Hebrew]{Ezra SIL SR}
 %\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
