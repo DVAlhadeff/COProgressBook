@@ -109,7 +109,7 @@ Birchon Document Class]
     \let\sectionmark\@gobble
     \let\subsectionmark\@gobble
     }
-  \if@titlepage
+
   \newcommand\maketitle{\begin{titlepage}%
   \let\footnotesize\small
   \let\footnoterule\relax
@@ -118,14 +118,6 @@ Birchon Document Class]
   \vskip 60\p@
   \begin{center}%
     {\LARGE \@title \par}%
-    \vskip 3em%
-    {\large
-     \lineskip .75em%
-      \begin{tabular}[t]{c}%
-        \@author
-      \end{tabular}\par}%
-      \vskip 1.5em%
-    {\large \@date \par}%       % Set date in \large size.
   \end{center}\par
   \@thanks
   \vfil\null
@@ -142,59 +134,7 @@ Birchon Document Class]
   \global\let\date\relax
   \global\let\and\relax
 }
-\else
-\newcommand\maketitle{\par
-  \begingroup
-    \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
-    \def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}%
-    \long\def\@makefntext##1{\parindent 1em\noindent
-            \hb@xt@1.8em{%
-                \hss\@textsuperscript{\normalfont\@thefnmark}}##1}%
-    \if@twocolumn
-      \ifnum \col@number=\@ne
-        \@maketitle
-      \else
-        \twocolumn[\@maketitle]%
-      \fi
-    \else
-      \newpage
-      \global\@topnum\z@   % Prevents figures from going at top of page.
-      \@maketitle
-    \fi
-    \thispagestyle{plain}\@thanks
-  \endgroup
-  \setcounter{footnote}{0}%
-  \global\let\thanks\relax
-  \global\let\maketitle\relax
-  \global\let\@maketitle\relax
-  \global\let\@thanks\@empty
-  \global\let\@author\@empty
-  \global\let\@date\@empty
-  \global\let\@title\@empty
-  \global\let\title\relax
-  \global\let\author\relax
-  \global\let\date\relax
-  \global\let\and\relax
-}
-\def\@maketitle{%
-  \newpage
-  \null
-  \vskip 2em%
-  \begin{center}%
-  \let \footnote \thanks
-    {\LARGE \@title \par}%
-    \vskip 1.5em%
-    {\large
-      \lineskip .5em%
-      \begin{tabular}[t]{c}%
-        \@author
-      \end{tabular}\par}%
-    \vskip 1em%
-    {\large \@date}%
-  \end{center}%
-  \par
-  \vskip 1.5em}
-\fi
+
 \setcounter{secnumdepth}{3}
 \newcounter {part}
 \newcounter {section}
@@ -584,6 +524,7 @@ Birchon Document Class]
 \usepackage{polyglossia, lettrine, graphicx, parallel}
 \usepackage{geometry, fancyhdr}
 \usepackage{fontspec}
+\usepackage{titling}
 \usepackage{bidi}
 
 \pagestyle{fancy}
